@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Remediation Workflow | Guardian Lens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface": "#f4faff", "on-surface": "#111d23", "surface-container-highest": "#d7e4ec", "on-secondary-container": "#217128", "tertiary-container": "#9d0010", "outline": "#737783", "tertiary-fixed": "#ffdad6", "primary-fixed": "#d9e2ff", "outline-variant": "#c3c6d4", "surface-container-low": "#e9f6fd", "tertiary": "#720009", "secondary-container": "#a0f399", "surface-container-lowest": "#ffffff", "surface-container": "#e3f0f8", "on-primary-container": "#a1bbff", "surface-container-high": "#ddeaf2", "primary-container": "#0d47a1", "surface-tint": "#2b5bb5", "error": "#ba1a1a", "error-container": "#ffdad6", "secondary": "#1b6d24", "on-error-container": "#93000a", "primary": "#003178", "on-primary": "#ffffff" }, fontFamily: { "headline": ["Manrope"], "body": ["Inter"] }, borderRadius: {"DEFAULT": "0.125rem", "md": "0.375rem", "lg": "0.5rem", "full": "9999px"} } } }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Manrope', sans-serif; }
+        .glass-float { background: rgba(215, 228, 236, 0.6); backdrop-filter: blur(20px); }
+        .gradient-cta { background: linear-gradient(135deg, #003178, #0d47a1); }
+        .gradient-cta:hover { opacity: 0.95; box-shadow: 0 4px 12px rgba(0, 49, 120, 0.2); }
+        .security-aura:hover { box-shadow: 0 12px 32px -4px rgba(17, 29, 35, 0.06); transform: translateY(-2px); transition: all 0.2s ease; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex">
+    <aside class="w-64 bg-surface-container-low h-screen sticky top-0 flex flex-col pt-8">
+        <div class="px-8 pb-12 flex flex-col gap-1"><h1 class="font-headline font-extrabold text-2xl text-primary tracking-tight">Guardian Lens</h1><span class="text-xs font-semibold text-outline uppercase tracking-widest">Operations</span></div>
+        <nav class="flex-1 flex flex-col gap-5 overflow-y-auto">
+            <a href="../dashboard/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors"><span class="material-symbols-outlined">dashboard</span><span class="font-bold text-sm">Dashboard</span></a>
+            <a href="../remediation_progress_tracker/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors"><span class="material-symbols-outlined">track_changes</span><span class="font-bold text-sm">Progress</span></a>
+            <a href="../remediation_workflow_details/code.html" class="flex items-center gap-4 px-8 py-3 bg-surface-container-highest text-primary"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_tree</span><span class="font-bold text-sm">Workflow</span></a>
+        </nav>
+    </aside>
+    <main class="flex-1 flex flex-col min-w-0">
+        <header class="h-20 bg-surface flex items-center justify-between px-16 sticky top-0 z-10 glass-float">
+            <div class="flex items-center gap-4">
+                <a href="../remediation_progress_tracker/code.html" class="text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">arrow_back</span></a>
+                <h2 class="font-headline font-extrabold text-xl">Finding Detail</h2>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="px-3 py-1 rounded-full bg-error text-white font-bold text-[10px] uppercase tracking-widest">Sev-1 Critical</span>
+                <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline font-bold text-sm shadow-sm border border-primary/10">JD</div>
+            </div>
+        </header>
+        <div class="flex-1 p-16 pt-8 flex flex-col gap-12">
+            <div class="flex items-start justify-between">
+                <div>
+                    <span class="font-mono text-sm text-error font-bold">NC-104</span>
+                    <h1 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight mt-1">Missing Data Processing Agreement — Vendor XYZ</h1>
+                    <p class="mt-2 text-sm text-outline font-medium">Frameworks: SOC 2 CC2.3, GDPR Art. 28 • Filed: Sep 5, 2023</p>
+                </div>
+                <button class="gradient-cta text-on-primary text-xs font-bold px-5 py-2.5 rounded-md shadow-lg flex items-center gap-2 shrink-0"><span class="material-symbols-outlined text-sm">edit</span> Update Status</button>
+            </div>
+
+            <!-- Workflow Timeline -->
+            <div class="grid grid-cols-12 gap-8">
+                <div class="col-span-8 bg-surface-container-lowest rounded-lg p-8 border border-outline-variant/15 security-aura">
+                    <h3 class="font-headline font-bold text-xl mb-8 border-b border-surface-container-high pb-4">Remediation Workflow</h3>
+                    <div class="relative pl-8">
+                        <div class="absolute left-[15px] top-4 bottom-4 w-0.5 bg-surface-container-highest"></div>
+                        <div class="space-y-6">
+                            <div class="relative flex items-start gap-6">
+                                <div class="absolute -left-[17px] w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center shrink-0 z-10"><span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">check</span></div>
+                                <div class="ml-6 bg-surface p-4 rounded-md flex-1 opacity-70">
+                                    <div class="flex justify-between"><h4 class="font-bold text-sm text-on-surface">Finding Logged</h4><span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Sep 5</span></div>
+                                    <p class="text-[11px] text-outline mt-1">Identified during internal control walkthrough by GRC Team.</p>
+                                </div>
+                            </div>
+                            <div class="relative flex items-start gap-6">
+                                <div class="absolute -left-[17px] w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center shrink-0 z-10"><span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">check</span></div>
+                                <div class="ml-6 bg-surface p-4 rounded-md flex-1 opacity-70">
+                                    <div class="flex justify-between"><h4 class="font-bold text-sm text-on-surface">Assigned to Legal Department</h4><span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Sep 7</span></div>
+                                    <p class="text-[11px] text-outline mt-1">Owner: General Counsel. SLA clock started.</p>
+                                </div>
+                            </div>
+                            <div class="relative flex items-start gap-6">
+                                <div class="absolute -left-[17px] w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0 z-10 ring-4 ring-primary/20"><span class="material-symbols-outlined text-sm">radio_button_checked</span></div>
+                                <div class="ml-6 bg-primary-fixed/30 p-4 rounded-md flex-1 border-l-4 border-primary">
+                                    <div class="flex justify-between"><h4 class="font-bold text-sm text-on-surface">External Counsel Review</h4><span class="text-[10px] font-bold text-error uppercase tracking-widest bg-error/10 px-2 py-0.5 rounded-full">Overdue</span></div>
+                                    <p class="text-[11px] text-error mt-1 font-medium">Awaiting external law firm sign-off. Blocked for 38 days.</p>
+                                    <button class="mt-3 text-[10px] font-bold uppercase tracking-wider bg-error/10 text-error px-3 py-1.5 border border-error/20 rounded-md hover:bg-error/20 transition-colors">Escalate to CEO</button>
+                                </div>
+                            </div>
+                            <div class="relative flex items-start gap-6 opacity-50">
+                                <div class="absolute -left-[17px] w-8 h-8 rounded-full bg-surface-container-highest text-outline flex items-center justify-center shrink-0 z-10 border border-outline-variant/15"><span class="material-symbols-outlined text-sm">radio_button_unchecked</span></div>
+                                <div class="ml-6 bg-surface p-4 rounded-md flex-1"><h4 class="font-bold text-sm text-on-surface">DPA Execution & Upload</h4><p class="text-[11px] text-outline mt-1">Signed document uploaded to evidence repository.</p></div>
+                            </div>
+                            <div class="relative flex items-start gap-6 opacity-50">
+                                <div class="absolute -left-[17px] w-8 h-8 rounded-full bg-surface-container-highest text-outline flex items-center justify-center shrink-0 z-10 border border-outline-variant/15"><span class="material-symbols-outlined text-sm">flag</span></div>
+                                <div class="ml-6 bg-surface p-4 rounded-md flex-1"><h4 class="font-bold text-sm text-on-surface">Verification & Close</h4><p class="text-[11px] text-outline mt-1">GRC team verifies and closes finding.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-4 space-y-6">
+                    <div class="bg-error-container/20 rounded-lg p-6 border border-error/20">
+                        <h4 class="font-headline text-xs font-bold text-error uppercase tracking-widest mb-3">SLA Status</h4>
+                        <span class="font-headline text-4xl font-extrabold text-error">45 Days</span>
+                        <p class="text-[10px] font-bold text-error mt-2 uppercase tracking-widest">41 days past SLA target</p>
+                        <div class="w-full bg-surface h-2 rounded-full overflow-hidden mt-3"><div class="bg-error h-full rounded-full" style="width:100%;"></div></div>
+                    </div>
+                    <div class="bg-surface-container-lowest rounded-lg p-6 border border-outline-variant/15 security-aura">
+                        <h4 class="font-headline text-xs font-bold text-on-surface uppercase tracking-widest mb-4">Details</h4>
+                        <div class="space-y-3 text-xs">
+                            <div class="flex justify-between"><span class="text-outline font-bold">Priority</span><span class="font-bold text-error">P1 Critical</span></div>
+                            <div class="flex justify-between"><span class="text-outline font-bold">Owner</span><span class="font-bold text-on-surface">General Counsel</span></div>
+                            <div class="flex justify-between"><span class="text-outline font-bold">Vendor</span><span class="font-bold text-on-surface">XYZ Analytics Inc.</span></div>
+                            <div class="flex justify-between"><span class="text-outline font-bold">Impact</span><span class="font-bold text-on-surface">SOC 2, GDPR</span></div>
+                        </div>
+                    </div>
+                    <div class="bg-surface-container-low rounded-lg p-6 border border-outline-variant/15">
+                        <h4 class="font-headline text-xs font-bold text-on-surface uppercase tracking-widest mb-4">Activity</h4>
+                        <div class="space-y-3 text-[11px] text-outline">
+                            <p><b class="text-on-surface">Oct 20:</b> CISO pinged Legal for update</p>
+                            <p><b class="text-on-surface">Oct 10:</b> External counsel requested amendments</p>
+                            <p><b class="text-on-surface">Sep 15:</b> Draft DPA sent to Vendor XYZ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

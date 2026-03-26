@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Team Dashboard | Guardian Lens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface": "#f4faff", "on-surface": "#111d23", "surface-container-highest": "#d7e4ec", "on-secondary-container": "#217128", "tertiary-container": "#9d0010", "outline": "#737783", "tertiary-fixed": "#ffdad6", "primary-fixed": "#d9e2ff", "outline-variant": "#c3c6d4", "surface-container-low": "#e9f6fd", "tertiary": "#720009", "secondary-container": "#a0f399", "surface-container-lowest": "#ffffff", "surface-container": "#e3f0f8", "on-primary-container": "#a1bbff", "surface-container-high": "#ddeaf2", "primary-container": "#0d47a1", "surface-tint": "#2b5bb5", "error": "#ba1a1a", "error-container": "#ffdad6", "secondary": "#1b6d24", "on-error-container": "#93000a", "primary": "#003178", "on-primary": "#ffffff" }, fontFamily: { "headline": ["Manrope"], "body": ["Inter"] }, borderRadius: {"DEFAULT": "0.125rem", "md": "0.375rem", "lg": "0.5rem", "full": "9999px"} } } }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Manrope', sans-serif; }
+        .glass-float { background: rgba(215, 228, 236, 0.6); backdrop-filter: blur(20px); }
+        .gradient-cta { background: linear-gradient(135deg, #003178, #0d47a1); }
+        .gradient-cta:hover { opacity: 0.95; box-shadow: 0 4px 12px rgba(0, 49, 120, 0.2); }
+        .security-aura:hover { box-shadow: 0 12px 32px -4px rgba(17, 29, 35, 0.06); transform: translateY(-2px); transition: all 0.2s ease; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex">
+    <aside class="w-64 bg-surface-container-low h-screen sticky top-0 flex flex-col pt-8">
+        <div class="px-8 pb-12 flex flex-col gap-1"><h1 class="font-headline font-extrabold text-2xl text-primary tracking-tight">Guardian Lens</h1><span class="text-xs font-semibold text-outline uppercase tracking-widest">People</span></div>
+        <nav class="flex-1 flex flex-col gap-5 overflow-y-auto">
+            <a href="../dashboard/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors"><span class="material-symbols-outlined">dashboard</span><span class="font-bold text-sm">Dashboard</span></a>
+            <a href="../team_performance_dashboard/code.html" class="flex items-center gap-4 px-8 py-3 bg-surface-container-highest text-primary"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span><span class="font-bold text-sm">Teams</span></a>
+            <a href="../individual_member_stats/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors"><span class="material-symbols-outlined">badge</span><span class="font-bold text-sm">Member Stats</span></a>
+            <a href="../resource_allocation_dashboard/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors"><span class="material-symbols-outlined">deployed_code</span><span class="font-bold text-sm">Resources</span></a>
+        </nav>
+    </aside>
+    <main class="flex-1 flex flex-col min-w-0">
+        <header class="h-20 bg-surface flex items-center justify-between px-16 sticky top-0 z-10 glass-float">
+            <h2 class="font-headline font-extrabold text-xl">Security Teams</h2>
+            <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline font-bold text-sm shadow-sm border border-primary/10">JD</div>
+        </header>
+        <div class="flex-1 p-16 pt-8 flex flex-col gap-12">
+            <div><h1 class="font-headline text-5xl font-extrabold text-on-surface tracking-tight">Team Performance</h1><p class="mt-2 text-sm text-outline font-medium">Compare throughput, SLA compliance, and capacity across security teams.</p></div>
+
+            <!-- Team Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-surface-container-lowest rounded-lg p-8 border border-outline-variant/15 security-aura border-l-4 border-error">
+                    <div class="flex justify-between items-start mb-6"><div><h3 class="font-headline font-bold text-2xl text-on-surface">Cloud Security</h3><p class="text-xs text-outline font-medium mt-1">6 Members • Lead: Aisha Khan</p></div><span class="px-2 py-0.5 rounded-full bg-error text-white font-bold text-[10px] uppercase tracking-wider">Overloaded</span></div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="text-center"><span class="block font-headline font-extrabold text-2xl text-error">138%</span><span class="text-[10px] text-outline font-bold uppercase tracking-widest">Util</span></div>
+                        <div class="text-center"><span class="block font-headline font-extrabold text-2xl text-on-surface">42</span><span class="text-[10px] text-outline font-bold uppercase tracking-widest">Closed/30d</span></div>
+                        <div class="text-center"><span class="block font-headline font-extrabold text-2xl text-secondary">95%</span><span class="text-[10px] text-outline font-bold uppercase tracking-widest">SLA Met</span></div>
+                    </div>
+                    <a href="../team_performance_report/code.html" class="mt-6 block w-full text-center bg-surface text-primary font-bold text-xs py-2.5 rounded-md border border-outline-variant/15 hover:bg-surface-container-highest transition-colors">View Report →</a>
+                </div>
+
+                <div class="bg-surface-container-lowest rounded-lg p-8 border border-outline-variant/15 security-aura">
+                    <div class="flex justify-between items-start mb-6"><div><h3 class="font-headline font-bold text-2xl text-on-surface">GRC / Compliance</h3><p class="text-xs text-outline font-medium mt-1">8 Members • Lead: Rachel Torres</p></div><span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-bold text-[10px] uppercase tracking-wider">Healthy</span></div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="text-center"><span class="block font-headline font-extrabold text-2xl text-primary">92%</span><span class="text-[10px] text-outline font-bold uppercase tracking-widest">Util</span></div>
+                        <div class="text-center"><span class="block font-headline font-extrabold text-2xl text-on-surface">28</span><span class="text-[10px] text-outline font-bold uppercase tracking-widest">Closed/30d</span></div>
+                        <div class="text-center"><span class="block font-headline font-extrabold text-2xl text-secondary">91%</span><span class="text-[10px] text-outline font-bold uppercase tracking-widest">SLA Met</span></div>
+                    </div>
+                    <a href="../team_performance_report/code.html" class="mt-6 block w-full text-center bg-surface text-primary font-bold text-xs py-2.5 rounded-md border border-outline-variant/15 hover:bg-surface-container-highest transition-colors">View Report →</a>
+                </div>
+
+                <div class="bg-surface-container-lowest rounded-lg p-8 border border-outline-variant/15 security-aura border-l-4 border-secondary">
+                    <div class="flex justify-between items-start mb-6"><div><h3 class="font-headline font-bold text-2xl text-on-surface">IAM Team</h3><p class="text-xs text-outline font-medium mt-1">4 Members • Lead: Daniel Park</p></div><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-bold text-[10px] uppercase tracking-wider">Available</span></div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="text-center"><span class="block font-headline font-extrabold text-2xl text-secondary">54%</span><span class="text-[10px] text-outline font-bold uppercase tracking-widest">Util</span></div>
+                        <div class="text-center"><span class="block font-headline font-extrabold text-2xl text-on-surface">15</span><span class="text-[10px] text-outline font-bold uppercase tracking-widest">Closed/30d</span></div>
+                        <div class="text-center"><span class="block font-headline font-extrabold text-2xl text-secondary">100%</span><span class="text-[10px] text-outline font-bold uppercase tracking-widest">SLA Met</span></div>
+                    </div>
+                    <a href="../team_performance_report/code.html" class="mt-6 block w-full text-center bg-surface text-primary font-bold text-xs py-2.5 rounded-md border border-outline-variant/15 hover:bg-surface-container-highest transition-colors">View Report →</a>
+                </div>
+
+                <div class="bg-surface-container-lowest rounded-lg p-8 border border-outline-variant/15 security-aura">
+                    <div class="flex justify-between items-start mb-6"><div><h3 class="font-headline font-bold text-2xl text-on-surface">Incident Response</h3><p class="text-xs text-outline font-medium mt-1">6 Members • Lead: Marcus Bell</p></div><span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-bold text-[10px] uppercase tracking-wider">Healthy</span></div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="text-center"><span class="block font-headline font-extrabold text-2xl text-primary">78%</span><span class="text-[10px] text-outline font-bold uppercase tracking-widest">Util</span></div>
+                        <div class="text-center"><span class="block font-headline font-extrabold text-2xl text-on-surface">22</span><span class="text-[10px] text-outline font-bold uppercase tracking-widest">Closed/30d</span></div>
+                        <div class="text-center"><span class="block font-headline font-extrabold text-2xl text-secondary">88%</span><span class="text-[10px] text-outline font-bold uppercase tracking-widest">SLA Met</span></div>
+                    </div>
+                    <a href="../team_performance_report/code.html" class="mt-6 block w-full text-center bg-surface text-primary font-bold text-xs py-2.5 rounded-md border border-outline-variant/15 hover:bg-surface-container-highest transition-colors">View Report →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

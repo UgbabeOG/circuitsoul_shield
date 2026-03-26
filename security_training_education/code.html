@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Security Training | Guardian Lens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface": "#f4faff", "on-surface": "#111d23", "surface-container-highest": "#d7e4ec", "on-secondary-container": "#217128", "tertiary-container": "#9d0010", "outline": "#737783", "tertiary-fixed": "#ffdad6", "primary-fixed": "#d9e2ff", "outline-variant": "#c3c6d4", "surface-container-low": "#e9f6fd", "tertiary": "#720009", "secondary-container": "#a0f399", "surface-container-lowest": "#ffffff", "surface-container": "#e3f0f8", "on-primary-container": "#a1bbff", "surface-container-high": "#ddeaf2", "primary-container": "#0d47a1", "surface-tint": "#2b5bb5", "error": "#ba1a1a", "error-container": "#ffdad6", "secondary": "#1b6d24", "on-error-container": "#93000a", "primary": "#003178", "on-primary": "#ffffff" }, fontFamily: { "headline": ["Manrope"], "body": ["Inter"] }, borderRadius: {"DEFAULT": "0.125rem", "md": "0.375rem", "lg": "0.5rem", "full": "9999px"} } } }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Manrope', sans-serif; }
+        .glass-float { background: rgba(215, 228, 236, 0.6); backdrop-filter: blur(20px); }
+        .gradient-cta { background: linear-gradient(135deg, #003178, #0d47a1); }
+        .gradient-cta:hover { opacity: 0.95; box-shadow: 0 4px 12px rgba(0, 49, 120, 0.2); }
+        .security-aura:hover { box-shadow: 0 12px 32px -4px rgba(17, 29, 35, 0.06); transform: translateY(-2px); transition: all 0.2s ease; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex">
+    <aside class="w-64 bg-surface-container-low h-screen sticky top-0 flex flex-col pt-8">
+        <div class="px-8 pb-12 flex flex-col gap-1"><h1 class="font-headline font-extrabold text-2xl text-primary tracking-tight">Guardian Lens</h1><span class="text-xs font-semibold text-outline uppercase tracking-widest">Training</span></div>
+        <nav class="flex-1 flex flex-col gap-5 overflow-y-auto">
+            <a href="../dashboard/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors"><span class="material-symbols-outlined">dashboard</span><span class="font-bold text-sm">Dashboard</span></a>
+            <a href="../security_training_education/code.html" class="flex items-center gap-4 px-8 py-3 bg-surface-container-highest text-primary"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span><span class="font-bold text-sm">Programs</span></a>
+            <a href="../team_training_progress_overview/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors"><span class="material-symbols-outlined">groups</span><span class="font-bold text-sm">Team Progress</span></a>
+            <a href="../training_audit_logs/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors"><span class="material-symbols-outlined">history</span><span class="font-bold text-sm">Audit Logs</span></a>
+        </nav>
+        <div class="p-8"><button class="w-full gradient-cta text-on-primary rounded-md py-3 font-bold text-sm shadow-sm flex items-center justify-center gap-2"><span class="material-symbols-outlined text-sm">add</span> New Program</button></div>
+    </aside>
+    <main class="flex-1 flex flex-col min-w-0">
+        <header class="h-20 bg-surface flex items-center justify-between px-16 sticky top-0 z-10 glass-float">
+            <h2 class="font-headline font-extrabold text-xl">Learning & Development</h2>
+            <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline font-bold text-sm shadow-sm border border-primary/10">JD</div>
+        </header>
+        <div class="flex-1 p-16 pt-8 flex flex-col gap-12">
+            <div><h1 class="font-headline text-5xl font-extrabold text-on-surface tracking-tight">Security Training</h1><p class="mt-2 text-sm text-outline font-medium">Manage mandatory security awareness programs and track organization-wide compliance.</p></div>
+
+            <!-- KPIs -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="gradient-cta rounded-lg pt-8 pl-8 pr-4 pb-4 flex flex-col justify-between shadow-lg text-on-primary security-aura"><h3 class="font-headline text-on-primary/80 text-sm uppercase tracking-widest font-bold">Org Completion</h3><div class="mt-8 flex items-baseline gap-2"><span class="font-headline text-6xl font-extrabold">91%</span></div></div>
+                <div class="bg-surface-container-lowest rounded-lg pt-8 pl-8 pr-4 pb-4 flex flex-col justify-between security-aura border-t-2 border-error"><h3 class="font-headline text-outline text-sm uppercase tracking-widest font-bold">Overdue</h3><div class="mt-8"><span class="font-headline text-5xl font-extrabold text-error">47</span><span class="text-outline font-bold text-xs ml-2">Employees</span></div></div>
+                <div class="bg-surface-container-lowest rounded-lg pt-8 pl-8 pr-4 pb-4 flex flex-col justify-between security-aura"><h3 class="font-headline text-outline text-sm uppercase tracking-widest font-bold">Active Programs</h3><div class="mt-8"><span class="font-headline text-5xl font-extrabold text-on-surface">06</span></div></div>
+                <div class="bg-surface-container-lowest rounded-lg pt-8 pl-8 pr-4 pb-4 flex flex-col justify-between security-aura border-t-2 border-secondary"><h3 class="font-headline text-outline text-sm uppercase tracking-widest font-bold">Phishing Pass Rate</h3><div class="mt-8"><span class="font-headline text-5xl font-extrabold text-secondary">84%</span></div></div>
+            </div>
+
+            <!-- Program Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/15 security-aura flex flex-col">
+                    <div class="gradient-cta p-6 text-on-primary"><div class="flex justify-between items-start"><span class="material-symbols-outlined text-3xl">security</span><span class="px-2 py-0.5 rounded-full bg-white/20 font-bold text-[10px] uppercase tracking-wider">Mandatory</span></div><h3 class="font-headline font-extrabold text-xl mt-4">Security Awareness</h3><p class="text-xs text-on-primary/70 mt-1">Annual — All employees</p></div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div class="space-y-3"><div><div class="flex justify-between text-xs font-bold mb-1"><span class="text-on-surface">Completion</span><span class="text-secondary">94%</span></div><div class="w-full bg-surface-container h-2 rounded-full overflow-hidden"><div class="bg-secondary h-full rounded-full" style="width:94%;"></div></div></div><p class="text-[10px] text-outline font-bold uppercase tracking-widest">72 of 1,200 employees remaining</p></div>
+                        <button class="mt-4 w-full bg-surface text-primary font-bold text-xs py-2.5 rounded-md border border-outline-variant/15 hover:bg-surface-container-highest transition-colors">View Details</button>
+                    </div>
+                </div>
+
+                <div class="bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/15 security-aura flex flex-col">
+                    <div class="bg-surface-container-highest p-6"><div class="flex justify-between items-start"><span class="material-symbols-outlined text-3xl text-primary">code</span><span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-bold text-[10px] uppercase tracking-wider">Role-Based</span></div><h3 class="font-headline font-extrabold text-xl mt-4 text-on-surface">Secure Coding (OWASP)</h3><p class="text-xs text-outline mt-1">Quarterly — Engineering only</p></div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div class="space-y-3"><div><div class="flex justify-between text-xs font-bold mb-1"><span class="text-on-surface">Completion</span><span class="text-primary">78%</span></div><div class="w-full bg-surface-container h-2 rounded-full overflow-hidden"><div class="bg-primary h-full rounded-full" style="width:78%;"></div></div></div><p class="text-[10px] text-outline font-bold uppercase tracking-widest">31 of 142 engineers remaining</p></div>
+                        <button class="mt-4 w-full bg-surface text-primary font-bold text-xs py-2.5 rounded-md border border-outline-variant/15 hover:bg-surface-container-highest transition-colors">View Details</button>
+                    </div>
+                </div>
+
+                <div class="bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/15 security-aura flex flex-col">
+                    <div class="bg-surface-container-highest p-6"><div class="flex justify-between items-start"><span class="material-symbols-outlined text-3xl text-error">phishing</span><span class="px-2 py-0.5 rounded-full bg-error/10 text-error font-bold text-[10px] uppercase tracking-wider">Simulation</span></div><h3 class="font-headline font-extrabold text-xl mt-4 text-on-surface">Phishing Simulation Q4</h3><p class="text-xs text-outline mt-1">Active campaign — All employees</p></div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div class="space-y-3"><div><div class="flex justify-between text-xs font-bold mb-1"><span class="text-on-surface">Sent</span><span class="text-on-surface">1,200</span></div></div><div class="grid grid-cols-3 gap-2 text-center"><div class="bg-secondary-container/20 p-2 rounded-md"><span class="block font-headline font-extrabold text-lg text-secondary">84%</span><span class="text-[10px] text-outline font-bold uppercase">Pass</span></div><div class="bg-error-container/20 p-2 rounded-md"><span class="block font-headline font-extrabold text-lg text-error">12%</span><span class="text-[10px] text-outline font-bold uppercase">Click</span></div><div class="bg-tertiary-fixed/20 p-2 rounded-md"><span class="block font-headline font-extrabold text-lg text-tertiary">4%</span><span class="text-[10px] text-outline font-bold uppercase">Submit</span></div></div></div>
+                        <button class="mt-4 w-full bg-surface text-primary font-bold text-xs py-2.5 rounded-md border border-outline-variant/15 hover:bg-surface-container-highest transition-colors">Campaign Report</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

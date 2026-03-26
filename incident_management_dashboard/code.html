@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Incident Management | Guardian Lens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#f4faff", "on-surface": "#111d23",
+                        "surface-container-highest": "#d7e4ec", "surface-bright": "#f4faff",
+                        "on-secondary-container": "#217128", "tertiary-container": "#9d0010", 
+                        "outline": "#737783", "tertiary-fixed": "#ffdad6", "primary-fixed": "#d9e2ff", 
+                        "outline-variant": "#c3c6d4", "surface-variant": "#d7e4ec", "on-error": "#ffffff", 
+                        "surface-container-low": "#e9f6fd", "tertiary": "#720009", "secondary-container": "#a0f399",
+                        "background": "#f4faff", "surface-container-lowest": "#ffffff", "surface-container": "#e3f0f8", 
+                        "on-primary-container": "#a1bbff", "surface-container-high": "#ddeaf2", 
+                        "primary-container": "#0d47a1", "surface-tint": "#2b5bb5", "error": "#ba1a1a", 
+                        "error-container": "#ffdad6", "secondary": "#1b6d24", "on-error-container": "#93000a", 
+                        "primary": "#003178"
+                    },
+                    fontFamily: { "headline": ["Manrope"], "body": ["Inter"], "label": ["Inter"] },
+                    borderRadius: {"DEFAULT": "0.125rem", "md": "0.375rem", "lg": "0.5rem", "full": "9999px"}
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Manrope', sans-serif; }
+        .glass-float { background: rgba(215, 228, 236, 0.6); backdrop-filter: blur(20px); }
+        .gradient-cta { background: linear-gradient(135deg, #003178, #0d47a1); }
+        .gradient-cta:hover { opacity: 0.95; box-shadow: 0 4px 12px rgba(0, 49, 120, 0.2); }
+        .security-aura:hover { box-shadow: 0 12px 32px -4px rgba(17, 29, 35, 0.06); transform: translateY(-2px); transition: all 0.2s ease; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex">
+
+    <aside class="w-64 bg-surface-container-low h-screen sticky top-0 flex flex-col pt-8">
+        <div class="px-8 pb-12 flex flex-col gap-1">
+            <h1 class="font-headline font-extrabold text-2xl text-primary tracking-tight">Guardian Lens</h1>
+            <span class="text-xs font-semibold text-outline uppercase tracking-widest">Command Center</span>
+        </div>
+
+        <nav class="flex-1 flex flex-col gap-5 overflow-y-auto">
+            <a href="../dashboard/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="font-bold text-sm">Dashboard</span>
+            </a>
+            <a href="../executive_compliance_dashboard/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors">
+                <span class="material-symbols-outlined">insights</span>
+                <span class="font-bold text-sm">Exec. Compliance</span>
+            </a>
+            <a href="../incident_management_dashboard/code.html" class="flex items-center gap-4 px-8 py-3 bg-surface-container-highest text-primary">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+                <span class="font-bold text-sm">Incidents</span>
+            </a>
+            <a href="../security_health_check/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors">
+                <span class="material-symbols-outlined">health_and_safety</span>
+                <span class="font-bold text-sm">Health Check</span>
+            </a>
+            <a href="../risk_registry/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors">
+                <span class="material-symbols-outlined">shield_locked</span>
+                <span class="font-bold text-sm">Risk Registry</span>
+            </a>
+            <a href="../audit_findings_summary/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors">
+                <span class="material-symbols-outlined">analytics</span>
+                <span class="font-bold text-sm">Audit Findings</span>
+            </a>
+            <a href="../auditor_remediation_review_workspace/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors">
+                <span class="material-symbols-outlined">fact_check</span>
+                <span class="font-bold text-sm">Remediation</span>
+            </a>
+            <a href="../compliance_calendar/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <span class="font-bold text-sm">Calendar</span>
+            </a>
+        </nav>
+
+        <div class="p-8">
+            <button class="w-full gradient-cta text-on-primary rounded-md py-3 font-bold text-sm shadow-sm flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm">add</span>
+                New Audit
+            </button>
+        </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col min-w-0">
+        
+        <header class="h-20 bg-surface flex items-center justify-between px-16 sticky top-0 z-10 glass-float">
+            <h2 class="font-headline font-extrabold text-xl">Incident Watchtower</h2>
+            <div class="flex items-center gap-6">
+                <!-- Using ghost border layout -->
+                <button class="px-5 py-2.5 rounded-md text-error bg-error-container/20 text-sm font-bold flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">gavel</span> Declare Sev-1
+                </button>
+                <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline font-bold text-sm shadow-sm cursor-pointer border border-primary/10">
+                    JD
+                </div>
+            </div>
+        </header>
+
+        <div class="flex-1 p-16 pt-8 flex flex-col gap-12">
+            
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6">
+                <div>
+                    <h1 class="font-headline text-5xl font-extrabold text-on-surface tracking-tight">Active Incident Triage</h1>
+                    <p class="mt-2 text-sm text-outline font-medium">Real-time alerts, containment flows, and forensic escalation queue.</p>
+                </div>
+                <!-- Status Chips using strict rounded-full rule -->
+                <div class="flex gap-4">
+                    <span class="px-4 py-2 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[10px] bg-error w-2 h-2 rounded-full"></span> 3 Unacknowledged
+                    </span>
+                    <span class="px-4 py-2 rounded-full border border-outline-variant/15 text-outline text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">history</span> History
+                    </span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                
+                <!-- MTTR Widget using Asymmetric Padding -->
+                <div class="bg-surface-container-lowest rounded-lg pt-8 pl-8 pr-4 pb-4 flex flex-col justify-between security-aura border-t-2 border-primary">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-headline text-outline text-sm uppercase tracking-widest font-bold">MTTR (30 Days)</h3>
+                        <span class="material-symbols-outlined text-primary">schedule</span>
+                    </div>
+                    <div class="mt-8 flex items-baseline gap-2">
+                        <span class="font-headline text-5xl font-extrabold text-on-surface">1h 14m</span>
+                        <span class="text-secondary font-bold text-xs flex items-center"><span class="material-symbols-outlined text-xs">arrow_downward</span> 10%</span>
+                    </div>
+                </div>
+
+                <div class="bg-surface-container-lowest rounded-lg pt-8 pl-8 pr-4 pb-4 flex flex-col justify-between security-aura relative overflow-hidden text-on-primary gradient-cta">
+                    <div class="relative z-10 flex justify-between items-start">
+                        <h3 class="font-headline text-on-primary/80 text-sm uppercase tracking-widest font-bold">P1 Incidents</h3>
+                        <span class="px-2 py-0.5 rounded-full bg-error text-white font-bold text-[10px] tracking-wider uppercase">Active</span>
+                    </div>
+                    <div class="relative z-10 mt-8 flex items-baseline gap-2">
+                        <span class="font-headline text-6xl font-extrabold">01</span>
+                    </div>
+                </div>
+
+                <div class="bg-surface-container-lowest rounded-lg pt-8 pl-8 pr-4 pb-4 flex flex-col justify-between security-aura">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-headline text-outline text-sm uppercase tracking-widest font-bold">P2 Alerts</h3>
+                    </div>
+                    <div class="mt-8 flex items-baseline gap-2">
+                        <span class="font-headline text-5xl font-extrabold text-on-surface">04</span>
+                        <span class="text-outline font-bold text-xs">Pending Triage</span>
+                    </div>
+                </div>
+
+                <div class="bg-surface-container-lowest rounded-lg pt-8 pl-8 pr-4 pb-4 flex flex-col justify-between security-aura">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-headline text-outline text-sm uppercase tracking-widest font-bold">Auto-Resolved</h3>
+                        <span class="material-symbols-outlined text-secondary">verified</span>
+                    </div>
+                    <div class="mt-8 flex items-baseline gap-2">
+                        <span class="font-headline text-5xl font-extrabold text-on-surface">89</span>
+                        <span class="text-outline font-bold text-xs">Last 24h</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Incident Queue. No divider lines, background shifts only. -->
+            <div class="bg-surface-container-lowest rounded-lg p-8 security-aura mt-4">
+                <div class="flex justify-between items-center mb-8">
+                    <h3 class="font-headline font-bold text-xl">Execution Queue</h3>
+                </div>
+                
+                <div class="flex flex-col gap-4">
+                    
+                    <!-- Critical P1 Incident -->
+                    <div class="flex items-center justify-between bg-error-container/20 p-6 rounded-md hover:bg-error-container/30 transition-colors">
+                        <div class="flex items-start gap-6 w-2/3">
+                            <span class="font-mono text-xs font-bold text-error uppercase mt-1 w-16">INC-991</span>
+                            <div>
+                                <h4 class="font-bold text-on-surface text-lg">Unidentified Login Spike (VPN Gateway)</h4>
+                                <p class="text-xs text-outline mt-1 max-w-lg">Multiple failed auth attempts detected against 'vpc-tunnel-eus' originating from Tor exit nodes.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-12 text-right">
+                            <div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-outline">Status</span>
+                                <div class="mt-1 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+                                    <span class="text-sm font-bold text-on-surface">Investigating</span>
+                                </div>
+                            </div>
+                            <div class="min-w-[80px]">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-outline">Since</span>
+                                <div class="mt-1 text-sm font-bold text-on-surface">11m ago</div>
+                            </div>
+                            <button class="w-10 h-10 rounded-full bg-surface-container-highest text-primary flex items-center justify-center hover:bg-primary-container hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-sm">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- P2 Incident -->
+                    <div class="flex items-center justify-between bg-surface-container-low p-6 rounded-md hover:bg-surface-container-highest/50 transition-colors">
+                        <div class="flex items-start gap-6 w-2/3">
+                            <span class="font-mono text-xs font-bold text-primary uppercase mt-1 w-16">INC-990</span>
+                            <div>
+                                <h4 class="font-bold text-on-surface text-lg">S3 Bucket ACL Modification Warn</h4>
+                                <p class="text-xs text-outline mt-1 max-w-lg">Automated alert: 'prod-backups' permissions altered by Service Account.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-12 text-right">
+                            <div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-outline">Status</span>
+                                <div class="mt-1 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+                                    <span class="text-sm font-bold text-on-surface">Unassigned</span>
+                                </div>
+                            </div>
+                            <div class="min-w-[80px]">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-outline">Since</span>
+                                <div class="mt-1 text-sm font-bold text-on-surface">1h 22m ago</div>
+                            </div>
+                            <button class="w-10 h-10 rounded-full bg-surface-container-highest text-primary flex items-center justify-center hover:bg-primary-container hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-sm">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- P3 Incident -->
+                    <div class="flex items-center justify-between bg-surface p-6 rounded-md hover:bg-surface-container-highest/50 transition-colors">
+                        <div class="flex items-start gap-6 w-2/3">
+                            <span class="font-mono text-xs font-bold text-outline uppercase mt-1 w-16">INC-989</span>
+                            <div>
+                                <h4 class="font-bold text-on-surface text-lg">WAF Rate Limit Exceeded (API v2)</h4>
+                                <p class="text-xs text-outline mt-1 max-w-lg">Traffic spike from automated scraper blocks verified.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-12 text-right">
+                            <div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-outline">Status</span>
+                                <div class="mt-1 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+                                    <span class="text-sm font-bold text-on-surface">Contained</span>
+                                </div>
+                            </div>
+                            <div class="min-w-[80px]">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-outline">Since</span>
+                                <div class="mt-1 text-sm font-bold text-on-surface">3h ago</div>
+                            </div>
+                            <button class="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-primary-container hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-sm">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

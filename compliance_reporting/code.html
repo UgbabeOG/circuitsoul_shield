@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Compliance Reporting | Guardian Lens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#f4faff", "on-surface": "#111d23",
+                        "surface-container-highest": "#d7e4ec", "surface-bright": "#f4faff",
+                        "on-secondary-container": "#217128", "tertiary-container": "#9d0010", 
+                        "outline": "#737783", "tertiary-fixed": "#ffdad6", "primary-fixed": "#d9e2ff", 
+                        "outline-variant": "#c3c6d4", "surface-variant": "#d7e4ec", "on-error": "#ffffff", 
+                        "surface-container-low": "#e9f6fd", "tertiary": "#720009", "secondary-container": "#a0f399",
+                        "background": "#f4faff", "surface-container-lowest": "#ffffff", "surface-container": "#e3f0f8", 
+                        "on-primary-container": "#a1bbff", "surface-container-high": "#ddeaf2", 
+                        "primary-container": "#0d47a1", "surface-tint": "#2b5bb5", "error": "#ba1a1a", 
+                        "error-container": "#ffdad6", "secondary": "#1b6d24", "on-error-container": "#93000a", 
+                        "primary": "#003178", "on-primary": "#ffffff"
+                    },
+                    fontFamily: { "headline": ["Manrope"], "body": ["Inter"], "label": ["Inter"] },
+                    borderRadius: {"DEFAULT": "0.125rem", "md": "0.375rem", "lg": "0.5rem", "full": "9999px"}
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Manrope', sans-serif; }
+        .glass-float { background: rgba(215, 228, 236, 0.6); backdrop-filter: blur(20px); }
+        .gradient-cta { background: linear-gradient(135deg, #003178, #0d47a1); }
+        .gradient-cta:hover { opacity: 0.95; box-shadow: 0 4px 12px rgba(0, 49, 120, 0.2); }
+        .security-aura:hover { box-shadow: 0 12px 32px -4px rgba(17, 29, 35, 0.06); transform: translateY(-2px); transition: all 0.2s ease; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex">
+
+    <aside class="w-64 bg-surface-container-low h-screen sticky top-0 flex flex-col pt-8">
+        <div class="px-8 pb-12 flex flex-col gap-1">
+            <h1 class="font-headline font-extrabold text-2xl text-primary tracking-tight">Guardian Lens</h1>
+            <span class="text-xs font-semibold text-outline uppercase tracking-widest">Command Center</span>
+        </div>
+
+        <nav class="flex-1 flex flex-col gap-5 overflow-y-auto">
+            <a href="../dashboard/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="font-bold text-sm">Dashboard</span>
+            </a>
+            <a href="../security_health_check/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors">
+                <span class="material-symbols-outlined">health_and_safety</span>
+                <span class="font-bold text-sm">Health Check</span>
+            </a>
+            <a href="../asset_risk_management/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors">
+                <span class="material-symbols-outlined">devices</span>
+                <span class="font-bold text-sm">Asset Risks</span>
+            </a>
+            <a href="../audit_logs/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors">
+                <span class="material-symbols-outlined">receipt_long</span>
+                <span class="font-bold text-sm">Audit Logs</span>
+            </a>
+            <a href="../compliance_reporting/code.html" class="flex items-center gap-4 px-8 py-3 bg-surface-container-highest text-primary">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">summarize</span>
+                <span class="font-bold text-sm">Reporting</span>
+            </a>
+            <a href="../system_settings/code.html" class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors">
+                <span class="material-symbols-outlined">settings</span>
+                <span class="font-bold text-sm">Settings</span>
+            </a>
+        </nav>
+
+        <div class="p-8">
+            <button class="w-full gradient-cta text-on-primary rounded-md py-3 font-bold text-sm shadow-sm flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm">add</span>
+                Custom Query
+            </button>
+        </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col min-w-0">
+        
+        <header class="h-20 bg-surface flex items-center justify-between px-16 sticky top-0 z-10 glass-float">
+            <h2 class="font-headline font-extrabold text-xl">Report Center</h2>
+            <div class="flex items-center gap-6">
+                <!-- Using ghost border layout -->
+                <button class="px-5 py-2.5 rounded-md border border-outline-variant/15 text-primary text-sm font-bold flex items-center gap-2 hover:bg-surface-container-highest transition-colors">
+                    <span class="material-symbols-outlined text-sm">file_copy</span> Manage Templates
+                </button>
+                <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline font-bold text-sm shadow-sm cursor-pointer border border-primary/10">
+                    JD
+                </div>
+            </div>
+        </header>
+
+        <div class="flex-1 p-16 pt-8 flex flex-col gap-12">
+            
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6">
+                <div>
+                    <h1 class="font-headline text-5xl font-extrabold text-on-surface tracking-tight">Compliance Reporting</h1>
+                    <p class="mt-2 text-sm text-outline font-medium">Generate, schedule, and distribute executive-ready attestations.</p>
+                </div>
+            </div>
+
+            <!-- Report Card Grid (Using purely background color shifts, strict Design rules) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Primary Action Report -->
+                <div class="bg-surface-container-lowest rounded-lg p-8 flex flex-col justify-between security-aura border-t-4 border-primary shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+                    <div class="flex justify-between items-start mb-12">
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full block w-fit mb-3">Popular</span>
+                            <h3 class="font-headline font-extrabold text-2xl text-on-surface">SOC 2 Type II Exec Summary</h3>
+                            <p class="text-xs text-outline font-medium mt-2 max-w-[200px]">Readiness snapshot, historical charts, and exception logs.</p>
+                        </div>
+                        <span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">article</span>
+                    </div>
+                    
+                    <button class="w-full gradient-cta text-on-primary rounded-md py-4 font-bold text-sm shadow-xl flex items-center justify-center gap-2 group-hover:-translate-y-0.5 transition-transform">
+                        <span class="material-symbols-outlined text-lg">electric_bolt</span> Generate Now
+                    </button>
+                </div>
+
+                <!-- Secondary Report -->
+                <div class="bg-surface-container-lowest rounded-lg p-8 flex flex-col justify-between security-aura border border-outline-variant/15 hover:border-outline-variant/30 transition-shadow group">
+                    <div class="flex justify-between items-start mb-12">
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-outline bg-surface px-3 py-1 border border-outline-variant/15 rounded-full block w-fit mb-3">Auditor Ready</span>
+                            <h3 class="font-headline font-extrabold text-2xl text-on-surface">Gap Remediation Matrix</h3>
+                            <p class="text-xs text-outline font-medium mt-2 max-w-[200px]">Detailed mapping of mitigated controls and compensating factors.</p>
+                        </div>
+                        <span class="material-symbols-outlined text-outline text-3xl group-hover:text-primary transition-colors">auto_awesome_mosaic</span>
+                    </div>
+                    
+                    <button class="w-full bg-surface-container-highest text-primary rounded-md py-4 font-bold text-sm border border-outline-variant/15 flex items-center justify-center gap-2 hover:bg-surface-container-highest/80 transition-colors">
+                        <span class="material-symbols-outlined text-lg">download</span> Download PDF
+                    </button>
+                </div>
+
+                <!-- Scheduled Report configuration -->
+                <div class="bg-surface-container-low rounded-lg p-8 flex flex-col justify-between border border-outline-variant/15 group relative overflow-hidden">
+                    <div class="absolute inset-0 bg-surface-container pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative z-10 flex justify-between items-start mb-12">
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-secondary bg-secondary-container/50 px-3 py-1 rounded-full block w-fit mb-3">Scheduled</span>
+                            <h3 class="font-headline font-extrabold text-2xl text-on-surface">Asset Risk Distribution</h3>
+                            <p class="text-xs text-outline font-medium mt-2">Delivers to: <i>c-suite-distro@org.com</i></p>
+                        </div>
+                        <span class="material-symbols-outlined text-secondary text-3xl">schedule</span>
+                    </div>
+                    
+                    <div class="relative z-10 flex justify-between items-center bg-surface-container-lowest rounded-md p-4 border border-outline-variant/15">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] uppercase font-bold text-outline tracking-wider">Next Run</span>
+                            <span class="text-sm font-bold text-on-surface">Every Friday at 5 PM</span>
+                        </div>
+                        <button class="text-primary hover:text-primary-container transition-colors">
+                            <span class="material-symbols-outlined">edit</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Report Archive -->
+            <div class="bg-surface-container-lowest rounded-lg p-8 mt-4 border border-outline-variant/15 security-aura">
+                <div class="flex justify-between items-center mb-8">
+                    <h3 class="font-headline font-bold text-xl">Recent Archives</h3>
+                    <div class="flex items-center gap-2">
+                        <button class="w-8 h-8 rounded-md bg-surface flex items-center justify-center text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+                        <button class="w-8 h-8 rounded-md bg-surface flex items-center justify-center text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    
+                    <div class="flex items-center justify-between px-6 py-4 bg-surface hover:bg-surface-container-low transition-colors rounded-md group">
+                        <div class="flex items-center gap-4 w-1/3">
+                            <span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">picture_as_pdf</span>
+                            <span class="font-bold text-sm text-on-surface">SOC2_Exception_Log_Q3.pdf</span>
+                        </div>
+                        <div class="w-1/4 text-xs font-bold text-outline">
+                            Generated logic: <i>System Automated</i>
+                        </div>
+                        <div class="w-1/6 text-xs text-outline font-mono">
+                            Oct 21, 2023
+                        </div>
+                        <button class="p-2 hover:bg-surface-container-highest rounded-full text-primary transition-colors">
+                            <span class="material-symbols-outlined text-sm">download</span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-between px-6 py-4 bg-surface hover:bg-surface-container-low transition-colors rounded-md group">
+                        <div class="flex items-center gap-4 w-1/3">
+                            <span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">table_view</span>
+                            <span class="font-bold text-sm text-on-surface">IAM_Access_Review_Sep.csv</span>
+                        </div>
+                        <div class="w-1/4 text-xs font-bold text-outline">
+                            Generated by: <i>j.doe@org.com</i>
+                        </div>
+                        <div class="w-1/6 text-xs text-outline font-mono">
+                            Sep 30, 2023
+                        </div>
+                        <button class="p-2 hover:bg-surface-container-highest rounded-full text-primary transition-colors">
+                            <span class="material-symbols-outlined text-sm">download</span>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

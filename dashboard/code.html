@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Command Center | Guardian Lens</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#93000e", "surface": "#f4faff", "on-surface": "#111d23",
+                        "surface-container-highest": "#d7e4ec", "surface-bright": "#f4faff", "tertiary-fixed-dim": "#ffb4ac", "on-tertiary-fixed": "#410003",
+                        "on-secondary-container": "#217128", "tertiary-container": "#9d0010", "on-secondary-fixed-variant": "#005312", "outline": "#737783",
+                        "tertiary-fixed": "#ffdad6", "primary-fixed": "#d9e2ff", "outline-variant": "#c3c6d4", "surface-variant": "#d7e4ec",
+                        "on-error": "#ffffff", "surface-container-low": "#e9f6fd", "tertiary": "#720009", "secondary-container": "#a0f399",
+                        "background": "#f4faff", "surface-container-lowest": "#ffffff", "surface-container": "#e3f0f8", "on-primary-container": "#a1bbff",
+                        "surface-container-high": "#ddeaf2", "primary-container": "#0d47a1", "on-primary-fixed-variant": "#00429c", "surface-tint": "#2b5bb5",
+                        "inverse-primary": "#b0c6ff", "error": "#ba1a1a", "on-secondary-fixed": "#002204", "inverse-on-surface": "#e6f3fb",
+                        "secondary-fixed-dim": "#88d982", "error-container": "#ffdad6", "secondary": "#1b6d24", "on-tertiary": "#ffffff",
+                        "on-background": "#111d23", "inverse-surface": "#263238", "on-error-container": "#93000a", "on-primary-fixed": "#001945",
+                        "surface-dim": "#cfdce4", "primary-fixed-dim": "#b0c6ff", "on-surface-variant": "#434652", "on-primary": "#ffffff",
+                        "secondary-fixed": "#a3f69c", "primary": "#003178", "on-tertiary-container": "#ffa59c"
+                    },
+                    fontFamily: { "headline": ["Manrope"], "body": ["Inter"], "label": ["Inter"] },
+                    borderRadius: { "DEFAULT": "0.125rem", "md": "0.375rem", "lg": "0.5rem", "full": "9999px" }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .font-headline {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        /* The Glass & Gradient Rule */
+        .glass-float {
+            background: rgba(215, 228, 236, 0.6);
+            backdrop-filter: blur(20px);
+        }
+
+        .gradient-cta {
+            background: linear-gradient(135deg, #003178, #0d47a1);
+        }
+
+        .gradient-cta:hover {
+            opacity: 0.95;
+            box-shadow: 0 4px 12px rgba(0, 49, 120, 0.2);
+        }
+
+        /* Ambient Shadow */
+        .security-aura:hover {
+            box-shadow: 0 12px 32px -4px rgba(17, 29, 35, 0.06);
+            transform: translateY(-2px);
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface antialiased min-h-screen flex">
+
+    <!-- Global Side Navigation (No lines, strictly background shifts) -->
+    <aside class="w-64 bg-surface-container-low h-screen sticky top-0 flex flex-col pt-8">
+        <div class="px-8 pb-12 flex flex-col gap-1">
+            <h1 class="font-headline font-extrabold text-2xl text-primary tracking-tight">Guardian Lens</h1>
+            <span class="text-xs font-semibold text-outline uppercase tracking-widest">Command Center</span>
+        </div>
+
+        <nav class="flex-1 flex flex-col gap-5">
+            <!-- Dashboard Link (Active State: surface-container-highest) -->
+            <a href="../dashboard/code.html"
+                class="flex items-center gap-4 px-8 py-3 bg-surface-container-highest text-primary">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                <span class="font-bold text-sm">Dashboard</span>
+            </a>
+
+            <a href="../security_health_check/code.html"
+                class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors">
+                <span class="material-symbols-outlined">health_and_safety</span>
+                <span class="font-bold text-sm">Health Check</span>
+            </a>
+
+            <a href="../audit_findings_summary/code.html"
+                class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors">
+                <span class="material-symbols-outlined">analytics</span>
+                <span class="font-bold text-sm">Audit Findings</span>
+            </a>
+
+            <a href="../auditor_remediation_review_workspace/code.html"
+                class="flex items-center gap-4 px-8 py-2 text-on-surface/70 hover:bg-surface-container-highest/50 transition-colors">
+                <span class="material-symbols-outlined">fact_check</span>
+                <span class="font-bold text-sm">Remediation</span>
+            </a>
+        </nav>
+
+        <div class="p-8">
+            <button
+                class="w-full gradient-cta text-on-primary rounded-md py-3 font-bold text-sm shadow-sm flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm">add</span>
+                New Audit
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="flex-1 flex flex-col min-w-0">
+
+        <!-- Global Top Navigation (No lines) -->
+        <header class="h-20 bg-surface flex items-center justify-between px-16 sticky top-0 z-10 glass-float">
+            <h2 class="font-headline font-extrabold text-xl">Overview</h2>
+            <div class="flex items-center gap-6">
+                <!-- Ghost border on input via outline-variant/15 -->
+                <div class="relative">
+                    <span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-sm">search</span>
+                    <input type="text" placeholder="Search systems..."
+                        class="bg-surface-container-lowest border border-outline-variant/15 rounded-full py-2 pl-10 pr-4 text-sm w-64 focus:outline-none focus:border-primary/50 text-on-surface placeholder-outline/50" />
+                </div>
+                <button
+                    class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-colors">
+                    <span class="material-symbols-outlined">notifications</span>
+                </button>
+                <div
+                    class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline font-bold text-sm shadow-sm cursor-pointer border border-primary/10">
+                    JD
+                </div>
+            </div>
+        </header>
+
+        <!-- Dynamic Work Area -->
+        <div class="flex-1 p-16 pt-8 flex flex-col gap-16">
+
+            <!-- Context & Hero Stats -->
+            <div class="flex items-end justify-between">
+                <div>
+                    <h1 class="font-headline font-extrabold text-5xl tracking-tight text-on-surface">Organization
+                        Posture</h1>
+                    <p class="mt-1.5 text-sm text-outline font-medium">Real-time aggregate view of 4 active enclaves.
+                    </p>
+                </div>
+                <!-- Status Chip Rule: strictly rounded-full -->
+                <div class="flex gap-4">
+                    <span
+                        class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">shield</span>
+                        Posture Stable
+                    </span>
+                </div>
+            </div>
+
+            <!-- Dashboard Widgets: Asymmetric Padding Rule (pt-8 pl-8 pr-4 pb-4) & Tonal Layering -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Hero Widget (Gradient CTA style background) -->
+                <div
+                    class="gradient-cta rounded-lg p-8 pb-6 pr-6 shadow-lg flex flex-col justify-between aspect-video md:aspect-auto security-aura">
+                    <h3 class="font-headline text-on-primary/80 text-sm uppercase tracking-widest font-bold">Overall
+                        Security Score</h3>
+                    <div class="flex items-baseline gap-2 mt-8">
+                        <span class="font-headline text-7xl font-extrabold text-on-primary">84</span>
+                        <span class="text-on-primary/60 font-bold text-sm">/100</span>
+                    </div>
+                </div>
+
+                <!-- Active Incidents Widget -->
+                <div
+                    class="bg-surface-container-lowest rounded-lg pt-8 pl-8 pr-4 pb-4 flex flex-col justify-between security-aura">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-headline text-outline text-sm uppercase tracking-widest font-bold">Active
+                            Threats</h3>
+                        <span class="material-symbols-outlined text-error">warning</span>
+                    </div>
+                    <div class="mt-8 flex items-baseline gap-3">
+                        <span class="font-headline text-6xl font-extrabold text-on-surface">02</span>
+                        <span class="text-outline text-sm font-medium">Critical Issues</span>
+                    </div>
+                    <!-- Empty state component to make it feel full -->
+                    <div class="mt-6 bg-surface-container-highest p-3 rounded-md">
+                        <p class="text-[10px] font-semibold text-on-surface-variant uppercase">Latest: Failed IAM
+                            Rotation (AWS Prod)</p>
+                    </div>
+                </div>
+
+                <!-- Remediation Progress -->
+                <div
+                    class="bg-surface-container-lowest rounded-lg pt-8 pl-8 pr-4 pb-4 flex flex-col justify-between security-aura">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-headline text-outline text-sm uppercase tracking-widest font-bold">Remediation
+                            Queue</h3>
+                        <span class="material-symbols-outlined text-primary">task_alt</span>
+                    </div>
+                    <div class="mt-8 flex items-baseline gap-3">
+                        <span class="font-headline text-6xl font-extrabold text-on-surface">18</span>
+                        <span class="text-outline text-sm font-medium">Pending Tasks</span>
+                    </div>
+                    <div class="mt-6 w-full bg-surface-container h-2 rounded-full overflow-hidden">
+                        <div class="bg-secondary h-full rounded-full" style="width: 65%;"></div>
+                    </div>
+                    <p class="text-[10px] text-outline font-medium mt-2 text-right">65% SLA Compliance</p>
+                </div>
+
+            </div>
+
+            <!-- Recent Activity List (No lines allowed, alternating background blocks) -->
+            <div class="bg-surface-container-lowest rounded-lg pt-8 pl-8 pr-8 pb-8 security-aura">
+                <h3 class="font-headline font-bold text-lg mb-6">Recent System Checks</h3>
+
+                <div class="flex flex-col gap-5"> <!-- spacing-5 for vertical whitespace instead of lines -->
+
+                    <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-md">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center">
+                                <span class="material-symbols-outlined text-sm">lock_open_right</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-on-surface">Unencrypted Database Volume Detected</h4>
+                                <p class="text-xs text-outline mt-0.5">RDS Cluster: prod-customer-data-02</p>
+                            </div>
+                        </div>
+                        <span
+                            class="px-3 py-1 bg-error-container text-on-error-container rounded-full text-[10px] font-bold uppercase tracking-wider">Critical</span>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 bg-surface rounded-md">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center">
+                                <span class="material-symbols-outlined text-sm">key</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-on-surface">Stale IAM Roles Identified</h4>
+                                <p class="text-xs text-outline mt-0.5">3 unused roles older than 90 days.</p>
+                            </div>
+                        </div>
+                        <span
+                            class="px-3 py-1 bg-surface-container-highest text-on-surface rounded-full text-[10px] font-bold uppercase tracking-wider">Minor</span>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-md">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+                                <span class="material-symbols-outlined text-sm">verified</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-on-surface">Daily Vulnerability Scan Completed</h4>
+                                <p class="text-xs text-outline mt-0.5">Containers scanned: 1,420 (0 new CVEs)</p>
+                            </div>
+                        </div>
+                        <span
+                            class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-wider">Safe</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>
